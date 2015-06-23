@@ -3,8 +3,8 @@
 import numpy as np
 import cv2
 # Initialize camera
-cap = cv2.VideoCapture(0)
-fgbg = cv2.createBackgroundSubtractorMOG()
+cap = cv2.VideoCapture(1)
+fgbg = cv2.BackgroundSubtractorMOG()
 
 while(1):
     ret, frame = cap.read()

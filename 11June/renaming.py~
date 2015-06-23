@@ -1,0 +1,20 @@
+#Pass the number of images in the folder as the argument while running the script.
+#This file should be in the same directory as the images 
+#The directory should also contain a text file containing names of all the images in the directory.
+
+import cv2
+import numpy as np
+import os
+import sys
+
+x = 10
+
+while x < 14:
+	i = 0
+	names = [name for name in os.listdir('.') if name.endswith('.jpg')]
+	for name in names:	
+		if int(name[7:9]) == x:
+				os.rename(name, "subject_" + str(x) + "_" + str(i) + ".jpeg")
+				i = i + 1			
+	x = x + 1
+

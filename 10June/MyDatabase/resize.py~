@@ -1,0 +1,38 @@
+#This script is used to resize the images.
+#The script should be run from within the directory which contains all the images
+#The directory should also contain the file Images.txt, which contains the list of all images in the directory
+#The directory should also contain an empty folder, "Folder" into which the resized gray images will be written
+
+import cv2
+import numpy as np
+import sys
+import os
+import os.path
+
+os.chdir("./" + sys.argv[1])
+f = open("Images.txt", "r")
+
+#Getting the number of images present in the folder. Note that one .txt file is also present.
+images = ["./"+name for name in os.listdir('.') if name.endswith('.jpg')]
+
+os.makedirs('GrayImages')
+
+i=0
+
+for image in images:
+
+	original = cv2.imread(image)	
+
+	height, width, c =  original.shape
+
+	res = cv2.resize(original,(width/8, height/8), interpolation = cv2.INTER_CUBIC)
+	gray = cv2.cvtColor(res, cv2.COLOR_BGR2GRAY)
+
+	os.chdir('./GrayImages')
+	
+	cv2.imwrite(image, gray)
+	
+	os.chdir('..')
+	i=i+1
+
+f.close()
