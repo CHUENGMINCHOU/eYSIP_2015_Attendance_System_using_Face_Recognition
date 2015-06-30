@@ -1,0 +1,7 @@
+import glob
+import os
+
+for f in glob.glob('*.JPG'):
+    new_filename = f.replace('*.JPG','*.jpeg')
+    new_filename = "subject_" + new_filename
+    os.rename(f,new_filename)
