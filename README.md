@@ -11,3 +11,4 @@ About the repository: The repository contains separate folders for each day's wo
 particular day can be found under the respective folders. There is also a detailed documentation for each level of the project.
 
 
+The final and verified project files and documentation can be found in Final_Project folder.
