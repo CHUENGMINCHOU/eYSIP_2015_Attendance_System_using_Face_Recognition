@@ -1,0 +1,11 @@
+import serial
+import time
+from mySerial import *
+
+while 1:
+    print getHeight()
+
+
+ser.close()
+
+
